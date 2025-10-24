@@ -1,6 +1,25 @@
-# BITÁCORA TÉCNICA - PSYKOS 🍞
+# BITÁCORA TÉCNICA - ZYKOS 🍞
 
 ## Diccionario de Términos
+
+**ZYKOS (ZKS)** = El Token
+- The Toasting Token
+- Lo que se compra/vende
+- ERC-20 standard
+- El activo
+
+**PSYKOS** = El Proyecto Médico
+- Red de nodos (clínicas validadoras)
+- Venta de servicios de salud
+- Clínica José Ingenieros (Nodo 0)
+- El respaldo real
+- NO es el token
+
+**ZYKOTROPOS** = La Comunidad
+- Holders del token
+- Pacientes
+- La tribu del tostado
+- El crew
 
 ### Uso de Fondos Recaudados (Para la Tostadora)
 
@@ -30,25 +49,31 @@ Los fondos que entran al proyecto se usan así:
 
 ---
 
-## Estructura del Proyecto
+## Estructura Completa
 
-### ZYKOS (ZKS)
-Token ERC-20
-The Toasting Token 🍞
-Símbolo: ZKS
+### Token: ZYKOS (ZKS)
+- Símbolo: ZKS
+- Standard: ERC-20
+- The Toasting Token 🍞
+- Lo que se tradea
 
-### PSYKOS
-Proyecto médico/clínica
-Respaldo real: Clínica José Ingenieros
+### Proyecto: PSYKOS
+- Red de nodos (clínicas validadoras)
+- Venta de servicios de salud mental
+- NO es el token, es el proyecto de backend
+
+**Nodo 0: Clínica José Ingenieros**
 - 40 años de trayectoria
 - 50,000 historias clínicas
-- 55 camas
+- 55 camas activas
 - PAMI, IOMA, OSDE
+- Primera clínica validadora
 
-### ZYKOTROPOS
-Comunidad/crew
-Pacientes y holders
-La tribu del tostado
+### Comunidad: ZYKOTROPOS
+- Holders de ZYKOS
+- Pacientes de PSYKOS
+- La tribu del tostado
+- El crew
 
 ---
 
@@ -98,9 +123,9 @@ Estos son conceptos en exploración, NO roadmap:
 ## Legal
 
 **DISCLAIMER:**
-PSYKOS/ZYKOS es un meme token sin valor intrínseco ni expectativa de ganancia.
+ZYKOS es un meme token sin valor intrínseco ni expectativa de ganancia.
 No es inversión. No es seguro. No garantiza nada.
-Una clínica existe, eso es todo.
+Una clínica existe (Nodo 0). Un proyecto PSYKOS existe. Eso es todo.
 DYOR. NFA. 🍞
 
 ---
