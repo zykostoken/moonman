@@ -18,9 +18,9 @@
 }
 
 body {
-    font-family: 'Helvetica', 'Space Mono', -apple-system, sans-serif;
-    background: var(--dark);
-    color: var(--light);
+    font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
     line-height: 1.6;
     position: relative;
 }
@@ -110,12 +110,12 @@ body::before {
 .btn-primary,
 .btn-secondary {
     padding: 15px 30px;
-    border-radius: 8px;
+    border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.2s, box-shadow 0.3s;
     border: none;
-    font-size: 1rem;
+    font-size: 1em;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -146,6 +146,21 @@ body::before {
 .btn-large {
     padding: 1rem 2rem;
     font-size: 1.125rem;
+}
+
+.btn-primary:disabled,
+.btn-secondary:disabled {
+    background-color: #444444;
+    color: #ffffff;
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.6;
+}
+
+.btn-primary:disabled:hover,
+.btn-secondary:disabled:hover {
+    transform: none;
+    background-color: #666666;
 }
 
 /* Hero */
@@ -186,7 +201,7 @@ body::before {
 .stat {
     background: var(--bg-secondary);
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: 5px;
     border: 1px solid var(--border);
 }
 
@@ -240,7 +255,7 @@ body::before {
 .about-card {
     background: var(--bg-secondary);
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: 5px;
     border: 1px solid var(--border);
     transition: all 0.3s;
 }
@@ -319,7 +334,7 @@ body::before {
 .details-list li {
     padding: 1rem;
     background: var(--bg-secondary);
-    border-radius: 8px;
+    border-radius: 5px;
     border-left: 4px solid var(--primary);
 }
 
@@ -332,7 +347,7 @@ body::before {
     text-align: center;
     padding: 2rem;
     background: var(--bg-secondary);
-    border-radius: 8px;
+    border-radius: 5px;
     margin-bottom: 2rem;
     border: 2px dashed var(--primary);
 }
@@ -347,7 +362,7 @@ body::before {
 .pool-card {
     background: var(--bg-secondary);
     padding: 1.5rem;
-    border-radius: 8px;
+    border-radius: 5px;
     border: 1px solid var(--border);
     transition: all 0.3s;
     cursor: pointer;
@@ -444,7 +459,7 @@ body::before {
 .buy-interface {
     background: var(--bg-secondary);
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: 5px;
     border: 1px solid var(--primary);
     max-width: 600px;
     margin: 0 auto;
@@ -479,7 +494,7 @@ body::before {
 
 .form-group input {
     padding: 0.75rem;
-    border-radius: 8px;
+    border-radius: 5px;
     border: 1px solid var(--border);
     background: var(--dark);
     color: var(--light);
@@ -525,7 +540,7 @@ body::before {
 .roadmap-content {
     background: var(--bg-secondary);
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: 5px;
     border-left: 4px solid var(--primary);
 }
 
@@ -564,7 +579,7 @@ body::before {
 .disclaimer {
     background: rgba(255, 85, 0, 0.1);
     border: 2px solid var(--primary);
-    border-radius: 8px;
+    border-radius: 5px;
     padding: 2rem;
     text-align: center;
 }
