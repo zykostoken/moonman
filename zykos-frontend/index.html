@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZYKOS ($ZKS) - El Memecoin que se Tuesta cuando Trabaja</title>
+    <meta name="description" content="Token de salud mental con utilidad real. 100M supply, precio inicial $0.05. Respaldado por clínica operativa de 20 años.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>$ZKS</h1>
+                <span class="tagline">ZYKOS</span>
+            </div>
+            <nav class="nav">
+                <a href="#about">Sobre ZKS</a>
+                <a href="#tokenomics">Tokenomics</a>
+                <a href="#pools">Comprar</a>
+                <a href="#roadmap">Roadmap</a>
+            </nav>
+            <button id="connectWallet" class="btn-primary">Connect Wallet</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">El Memecoin que se <span class="highlight">Tuesta</span> cuando Trabaja</h2>
+                <p class="hero-subtitle">
+                    100M tokens. Supply fijo. Respaldado por clínica real con 20 años operando.
+                    <br>No prometemos nada. Pero si creés, guardalo.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-value" id="totalSupply">100M</div>
+                        <div class="stat-label">Total Supply</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="currentPrice">$0.050</div>
+                        <div class="stat-label">Precio Actual</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="tokensSold">0</div>
+                        <div class="stat-label">Tokens Vendidos</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="tokensToasted">0</div>
+                        <div class="stat-label">Tokens Tostados</div>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#pools" class="btn-primary btn-large">Comprar $ZKS</a>
+                    <a href="#about" class="btn-secondary btn-large">Aprender Más</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">¿Qué es $ZKS?</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon">🧠</div>
+                    <h3>Salud Mental Real</h3>
+                    <p>Respaldado por clínica psiquiátrica con 15 camas, operativa desde hace 20 años. $3M/año en ingresos reales.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">🔥</div>
+                    <h3>Sistema de Tostado</h3>
+                    <p>Cuando un token paga un servicio, se "tuesta" (marca de uso). Proof social de utilidad sin promesas contractuales.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">♻️</div>
+                    <h3>Reciclable</h3>
+                    <p>Los tokens no se queman, se reciclan. Vuelven al sistema y se revenden. Supply constante de 100M.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">📈</div>
+                    <h3>Precio Anclado</h3>
+                    <p>Precio referencial $0.075 basado en valor de camas ($200k/año × 15). Lanzamiento early adopter: $0.05</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">🔒</div>
+                    <h3>Supply Fijo</h3>
+                    <p>100M tokens, minteo único. No se pueden crear más. Anti-inflación garantizado on-chain.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Utilidad Futura</h3>
+                    <p>Telemedicina, portales institucionales, servicios médico-legales. Pero sin promesas contractuales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics -->
+    <section id="tokenomics" class="section bg-dark">
+        <div class="container">
+            <h2 class="section-title">Tokenomics</h2>
+            <div class="tokenomics-grid">
+                <div class="tokenomics-chart">
+                    <h3>Distribución de Supply</h3>
+                    <div class="chart-placeholder">
+                        <div class="pie-segment" style="--percentage: 80; --color: #8b5cf6">
+                            <span>80%<br>Venta Pública</span>
+                        </div>
+                        <div class="pie-segment" style="--percentage: 20; --color: #06b6d4">
+                            <span>20%<br>Airdrops & Rewards</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tokenomics-details">
+                    <h3>Estructura de Venta</h3>
+                    <ul class="details-list">
+                        <li><strong>Total Supply:</strong> 100,000,000 ZKS</li>
+                        <li><strong>Venta Pública:</strong> 80,000,000 ZKS (80%)</li>
+                        <li><strong>Airdrops/Rewards:</strong> 20,000,000 ZKS (20%)</li>
+                        <li><strong>Pools:</strong> 100 pools de 1M tokens cada uno</li>
+                        <li><strong>Precio Inicial:</strong> $0.050 (Pools 1-2)</li>
+                        <li><strong>Precio Final:</strong> $0.075 (Pools 61-100)</li>
+                        <li><strong>Liberación:</strong> Gradual (91% = activación, 98% = release)</li>
+                        <li><strong>Sin Quema:</strong> Tokens se reciclan, no se destruyen</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pools Section (Buy) -->
+    <section id="pools" class="section">
+        <div class="container">
+            <h2 class="section-title">Comprar $ZKS</h2>
+            <div class="wallet-status" id="walletStatus">
+                <p>🔌 Conectá tu wallet para comprar tokens</p>
+            </div>
+
+            <div class="pools-grid" id="poolsGrid">
+                <!-- Los pools se cargan dinámicamente desde el smart contract -->
+                <div class="pool-card loading">
+                    <p>Cargando pools...</p>
+                </div>
+            </div>
+
+            <div id="buyInterface" class="buy-interface" style="display: none;">
+                <h3>Comprar Tokens</h3>
+                <div class="buy-form">
+                    <div class="form-group">
+                        <label>Pool Seleccionado:</label>
+                        <input type="text" id="selectedPool" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Precio por Token:</label>
+                        <input type="text" id="poolPrice" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Cantidad de Tokens:</label>
+                        <input type="number" id="tokenAmount" placeholder="1000" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label>Costo Total (USDC):</label>
+                        <input type="text" id="totalCost" readonly>
+                    </div>
+                    <button id="approveUSDC" class="btn-secondary">1. Aprobar USDC</button>
+                    <button id="buyTokens" class="btn-primary" disabled>2. Comprar Tokens</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section id="roadmap" class="section bg-dark">
+        <div class="container">
+            <h2 class="section-title">Roadmap</h2>
+            <div class="roadmap">
+                <div class="roadmap-item">
+                    <div class="roadmap-quarter">Q1 2025</div>
+                    <div class="roadmap-content">
+                        <h3>🚀 Launch</h3>
+                        <ul>
+                            <li>Deploy de smart contract en Base</li>
+                            <li>Apertura de primeros 10 pools</li>
+                            <li>Landing page y documentación</li>
+                            <li>Comunidad en Telegram/Twitter</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-quarter">Q2 2025</div>
+                    <div class="roadmap-content">
+                        <h3>🏥 MVP Servicios</h3>
+                        <ul>
+                            <li>Plataforma de telemedicina básica</li>
+                            <li>Primeros tokens tostados (proof of use)</li>
+                            <li>Dashboard de estadísticas públicas</li>
+                            <li>Partnerships con profesionales</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-quarter">Q3 2025</div>
+                    <div class="roadmap-content">
+                        <h3>🏢 Portales B2B</h3>
+                        <ul>
+                            <li>Beta de portales institucionales</li>
+                            <li>Primeros 2-3 hospitales usando sistema</li>
+                            <li>Gaming terapéutico y métricas</li>
+                            <li>Expansion de servicios</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-quarter">Q4 2025</div>
+                    <div class="roadmap-content">
+                        <h3>📊 Escalabilidad</h3>
+                        <ul>
+                            <li>10+ instituciones usando portales</li>
+                            <li>Millones de tokens tostados</li>
+                            <li>Nuevos verticales (médico-legal, etc.)</li>
+                            <li>Listado en DEXs/CEXs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="section disclaimer-section">
+        <div class="container">
+            <div class="disclaimer">
+                <h3>⚠️ Disclaimer Legal</h3>
+                <p>
+                    $ZKS es un token experimental sin garantías ni promesas contractuales.
+                    No prometemos retornos, no es equity, no garantizamos servicios futuros.
+                    Cualquier utilidad futura es opcional y a discreción del proyecto.
+                    Comprás bajo tu propio riesgo. Esto es especulación, no inversión.
+                    Solo comprá lo que estés dispuesto a perder.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>$ZKS - ZYKOS</h4>
+                    <p>El memecoin que se tuesta cuando trabaja</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="https://basescan.org" target="_blank">Contract (BaseScan)</a></li>
+                        <li><a href="https://t.me/zykostoken" target="_blank">Telegram</a></li>
+                        <li><a href="https://twitter.com/zykostoken" target="_blank">Twitter/X</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/terms">Términos y Condiciones</a></li>
+                        <li><a href="/privacy">Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Zykos. No promises, just memes (with potential).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
