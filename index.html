@@ -1,192 +1,573 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZYKOS - The Toasting Token</title>
-<style>
-body {
-  margin: 0;
-  background-color: #000;
-  font-family: Helvetica, sans-serif;
-  color: #fff;
-  text-align: center;
-}
-h1, h2 {
-  color: #FF5500;
-  margin: 20px 0;
-}
-p {
-  font-size: 1.1em;
-  line-height: 1.5;
-  margin: 15px 20px;
-}
-a {
-  color: #FF5500;
-  text-decoration: underline;
-}
-.button-zykos {
-  background-color: #FF5500;
-  color: #fff;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.2em;
-  cursor: pointer;
-  margin: 20px;
-  box-shadow: 0 0 15px #FF5500;
-  transition: transform 0.2s, box-shadow 0.3s;
-}
-.button-zykos:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px #FF5500;
-}
-.button-zykos:disabled {
-  background-color: #666666;
-  cursor: not-allowed;
-  box-shadow: none;
-}
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-.section {
-  padding: 50px 20px;
-  max-width: 800px;
-  margin: auto;
-}
-.disclaimer {
-  background-color: #111;
-  color: #999;
-  font-size: 0.9em;
-  padding: 20px;
-  margin-top: 40px;
-}
-.disclaimer strong {
-  color: #FF5500;
-}
-.tokenomics-box {
-  background-color: #111;
-  border: 1px solid #333;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 20px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
-</head>
-<body>
 
-<!-- Animación de partículas -->
-<div id="particles-js"></div>
+index.html
+   <h3>🍞 COMPRAR ZYKOS</h3>
+            
+            <div class="input-group">
+                <label>TOKEN DE PAGO</label>
+                <select id="paymentToken">
+                    <option value="usdc">USDC (BSC)</option>
+                    <option value="usdt">USDT (BSC)</option>
+                </select>
+            </div>
 
-<!-- Hero -->
-<div class="section">
-  <h1>ZYKOS 🍞</h1>
-  <h2>THE TOASTING TOKEN</h2>
-  <p>Huele a tostado.</p>
-  <p>¿Qué estará tostando?</p>
-  <button class="button-psykos" disabled>Comprar ZYKOS (Próximamente)</button>
-</div>
+            <div class="input-group">
+                <label>CANTIDAD DE ZKS</label>
+                <input type="number" id="buyAmount" placeholder="1000" min="1">
+            </div>
 
-<!-- Narrativa diferencial -->
-<div class="section">
-  <h2>El olor a tostado</h2>
-  <p>Memética. Helvetica. Frenética.</p>
-  <p>Punk-ética. Estética. Poética. Raquítica.</p>
-  <p>Imposible decir que comenzó con promesas vanas de un amor.</p>
-  <p>Algo se está tostando.</p>
-  <p>En la blockchain. En la comunidad. En el misterio.</p>
-  <p>¿Es un token? ¿Es un meme? ¿Es algo más?</p>
-  <p>Nadie lo sabe todavía.</p>
-  <p>Solo huele a tostado.</p>
-  <p><strong>Meme hasta la muerte, rodeado del misterio de la incertidumbre.</strong></p>
-  <p><strong>Bienvenido al experimento. 🍞</strong></p>
-</div>
+            <div class="buy-summary">
+                <div class="row">
+                    <span>Cantidad:</span>
+                    <span id="summaryAmount">0 ZKS</span>
+                </div>
+                <div class="row">
+                    <span>Precio por token:</span>
+                    <span id="summaryPrice">$0.05</span>
+                </div>
+                <div class="row">
+                    <span>Total a pagar:</span>
+                    <span id="summaryTotal">$0.00</span>
+                </div>
+            </div>
 
-<!-- Tokenomics -->
-<div class="section">
-  <h2>Tokenomics</h2>
-  <div class="tokenomics-box">
-    <p>🔸 50% retiro inmediato.</p>
-    <p>🔸 25% otro algo (BTC).</p>
-    <p>🔸 12.5% reserva final.</p>
-    <p>🔸 12.5% activos varios.</p>
-    <p><strong>Sin fees.</strong></p>
-  </div>
-  <p>Los detalles técnicos están en la bitácora.</p>
-</div>
+            <button class="buy-btn" id="buyBtn" disabled>CONECTAR WALLET PRIMERO</button>
+        </div>
+    </section>
 
-<!-- Proof of Toast -->
-<div class="section">
-  <h2>Proof of Toast 🍞</h2>
-  <p>Los tokens se tuestan. Cambian de color.</p>
-  <p>🤍 Virgin - Recién salido del horno</p>
-  <p>🟤 Bronze - Tostado 2-4 veces</p>
-  <p>⚫ Charcoal - Tostado 5+ veces</p>
-  <p>¿Para qué sirve? Nada garantizado.</p>
-  <p>La comunidad lo descubre. O no.</p>
-  <p><strong>Tostar es probar. Probar es valor.</strong></p>
-</div>
+    <!-- DOCS -->
+    <section class="section" id="docs">
+        <h2>DOCUMENTACIÓN</h2>
+        <p class="subtitle">TODO LO QUE NECESITÁS SABER</p>
 
-<!-- Consignas ZYKOTROPOS -->
-<div class="section">
-  <h2>ZYKOTROPOS 🍞</h2>
-  <p><strong>La tribu de los tostados.</strong></p>
-  <p>"Todos estamos un poco tostados."</p>
-  <p>"Tostado pero no quemado."</p>
-  <p>"El pan que tuesta, vale."</p>
-  <p>"Entre el pan y la tostada, la transformación."</p>
-  <p>"Tostar es probar."</p>
-  <p><strong>La comunidad descubre. La comunidad valida. La comunidad tuesta.</strong></p>
-</div>
+        <div class="tokenomics-grid">
+            <div class="token-card">
+                <h3>📄 CONTRATO</h3>
+                <p>Verificado en BSCScan. Código abierto. Sin mint functions ocultas.</p>
+                <a href="https://bscscan.com/address/0xB4D46f6C550AA855307085b8970D971Cdeafb030#code" target="_blank" style="color: var(--secondary);">Ver código →</a>
+            </div>
 
-<!-- ¿Cómo funciona? -->
-<div class="section">
-  <h2>¿Cómo funciona?</h2>
-  <p>1️⃣ Conectás tu wallet.</p>
-  <p>2️⃣ Comprás ZYKOS.</p>
-  <p>3️⃣ Holdeas. Especulás. Tal vez pasa algo.</p>
-</div>
+            <div class="token-card">
+                <h3>🔍 AUDITORÍA</h3>
+                <p>Revisado con SolidityScan. Score 81.42/100. Sin vulnerabilidades críticas.</p>
+                <div class="value" style="font-size: 1rem;">SCORE: 81.42</div>
+            </div>
 
-<!-- Preguntas frecuentes -->
-<div class="section">
-  <h2>FAQ</h2>
-  <p><strong>¿Qué es ZYKOS?</strong><br>
-  Un token. Un meme. El olor a tostado.</p>
-  <p><strong>¿Para qué sirve?</strong><br>
-  Para nada garantizado. Holdear. Tostar. Ver qué descubre la comunidad.</p>
-  <p><strong>¿Cuándo sale?</strong><br>
-  Próximamente.</p>
-</div>
+            <div class="token-card">
+                <h3>🌐 ECOSISTEMA</h3>
+                <p>zykos.ar | zykotoken.ar | zykosweb.netlify.app</p>
+                <a href="https://zykosweb.netlify.app" target="_blank" style="color: var(--secondary);">Ver docs →</a>
+            </div>
 
-<!-- Disclaimer legal -->
-<div class="disclaimer">
-  <strong>Disclaimer:</strong><br>
-  ZYKOS es un meme token sin valor intrínseco ni expectativa de ganancia. No es inversión. No es seguro. No garantiza nada. Solo huele a tostado. La comunidad descubrirá lo que tenga que descubrir, o no. Comprás bajo tu propio riesgo. DYOR. NFA. 🍞
-</div>
+            <div class="token-card">
+                <h3>💻 GITHUB</h3>
+                <p>Todo el código del proyecto es open source.</p>
+                <a href="https://github.com/zykostoken" target="_blank" style="color: var(--secondary);">Ver repos →</a>
+            </div>
+        </div>
+    </section>
 
-<!-- Particles.js Script -->
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script>
-particlesJS("particles-js", {
-  "particles": {
-    "number": {"value": 80},
-    "size": {"value": 3},
-    "color": {"value": "#FF5500"},
-    "line_linked": {"enable": true, "distance": 150, "color": "#FF5500", "opacity": 0.4, "width": 1},
-    "move": {"enable": true, "speed": 1}
-  },
-  "interactivity": {
-    "events": {"onhover": {"enable": true, "mode": "repulse"}},
-    "modes": {"repulse": {"distance": 100}}
-  }
-});
-</script>
+    <!-- DISCLAIMER -->
+    <section class="disclaimer">
+        <h2>⚠️ DISCLAIMER</h2>
+        <p>
+            ZYKOS es un meme token experimental. No es consejo financiero.
+            No hay promesas de retorno. El valor puede ir a cero.
+        </p>
+        <ul class="warning-list">
+            <li>Esto NO es inversión, es entretenimiento con riesgo.</li>
+            <li>Solo poné lo que estés dispuesto a perder completamente.</li>
+            <li>No hay roadmap. No hay team oficial. No hay garantías.</li>
+            <li>DYOR - Do Your Own Research. Siempre.</li>
+            <li>Si buscás "inversión segura", esto NO es para vos.</li>
+        </ul>
+        <p style="color: var(--accent); margin-top: 2rem;">
+            "Un psiquiatra hizo un token. Internet dice que está loco.<br>
+            Él dice que están locos ustedes."
+        </p>
+    </section>
 
+    <!-- FOOTER -->
+    <footer>
+        <div class="social-links">
+            <a href="https://x.com/krazymanBSC" target="_blank">𝕏 TWITTER</a>
+            <a href="https://bscscan.com/address/0xB4D46f6C550AA855307085b8970D971Cdeafb030" target="_blank">BSCSCAN</a>
+            <a href="https://github.com/zykostoken" target="_blank">GITHUB</a>
+        </div>
+        <div class="footer-logo">🍞 ZYKOS</div>
+        <p class="footer-text">
+            The Toaster Token — BSC Mainnet<br>
+            0xB4D46f6C550AA855307085b8970D971Cdeafb030
+        </p>
+    </footer>
+
+    <!-- ETHERS.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.0/ethers.umd.min.js"></script>
+
+    <script>
+        // ============================================
+        // DYNAMIC BACKGROUND EFFECTS
+        // ============================================
+        
+        const canvas = document.getElementById('bgCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        let particles = [];
+        let meteors = [];
+        let sparks = [];
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        
+        // Particle class - floating dust/glitter
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+            
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.opacity = Math.random() * 0.5 + 0.1;
+                this.color = Math.random() > 0.7 ? '#ff6b35' : Math.random() > 0.5 ? '#00ff9d' : '#ffffff';
+                this.pulse = Math.random() * Math.PI * 2;
+            }
+            
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.pulse += 0.02;
+                this.opacity = 0.1 + Math.sin(this.pulse) * 0.2;
+                
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+            
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = this.opacity;
+                ctx.fill();
+                ctx.globalAlpha = 1;
+            }
+        }
+        
+        // Meteor class - rocks crashing
+        class Meteor {
+            constructor() {
+                this.reset();
+            }
+            
+            reset() {
+                this.x = Math.random() * canvas.width + canvas.width;
+                this.y = -50;
+                this.size = Math.random() * 3 + 2;
+                this.speed = Math.random() * 8 + 5;
+                this.angle = Math.PI / 4 + (Math.random() - 0.5) * 0.3;
+                this.tail = [];
+                this.tailLength = Math.floor(Math.random() * 15) + 10;
+                this.active = true;
+                this.opacity = 1;
+            }
+            
+            update() {
+                this.tail.unshift({ x: this.x, y: this.y });
+                if (this.tail.length > this.tailLength) {
+                    this.tail.pop();
+                }
+                
+                this.x -= Math.cos(this.angle) * this.speed;
+                this.y += Math.sin(this.angle) * this.speed;
+                
+                // Check for "impact"
+                if (this.y > canvas.height - 100 && this.active) {
+                    this.active = false;
+                    createSparks(this.x, this.y);
+                }
+                
+                if (!this.active) {
+                    this.opacity -= 0.05;
+                }
+                
+                if (this.opacity <= 0 || this.y > canvas.height + 50) {
+                    this.reset();
+                    this.active = true;
+                    this.opacity = 1;
+                }
+            }
+            
+            draw() {
+                if (this.opacity <= 0) return;
+                
+                // Draw tail
+                for (let i = 0; i < this.tail.length; i++) {
+                    const alpha = (1 - i / this.tail.length) * 0.5 * this.opacity;
+                    const size = this.size * (1 - i / this.tail.length);
+                    ctx.beginPath();
+                    ctx.arc(this.tail[i].x, this.tail[i].y, size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255, 107, 53, ${alpha})`;
+                    ctx.fill();
+                }
+                
+                // Draw meteor head
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 200, 100, ${this.opacity})`;
+                ctx.fill();
+                
+                // Glow
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size * 2, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 107, 53, ${this.opacity * 0.3})`;
+                ctx.fill();
+            }
+        }
+        
+        // Spark class - impact particles
+        class Spark {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.speedX = (Math.random() - 0.5) * 10;
+                this.speedY = -Math.random() * 8 - 2;
+                this.gravity = 0.3;
+                this.size = Math.random() * 3 + 1;
+                this.opacity = 1;
+                this.color = Math.random() > 0.5 ? '#ff6b35' : '#ffd93d';
+            }
+            
+            update() {
+                this.x += this.speedX;
+                this.speedY += this.gravity;
+                this.y += this.speedY;
+                this.opacity -= 0.02;
+                this.size *= 0.98;
+            }
+            
+            draw() {
+                if (this.opacity <= 0) return;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = this.opacity;
+                ctx.fill();
+                ctx.globalAlpha = 1;
+            }
+        }
+        
+        function createSparks(x, y) {
+            for (let i = 0; i < 20; i++) {
+                sparks.push(new Spark(x, y));
+            }
+        }
+        
+        // Initialize particles
+        for (let i = 0; i < 50; i++) {
+            particles.push(new Particle());
+        }
+        
+        // Initialize meteors (less frequent)
+        for (let i = 0; i < 2; i++) {
+            const meteor = new Meteor();
+            meteor.y = Math.random() * canvas.height; // Stagger start positions
+            meteors.push(meteor);
+        }
+        
+        // Animation loop
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Update and draw particles
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            
+            // Update and draw meteors
+            meteors.forEach(m => {
+                m.update();
+                m.draw();
+            });
+            
+            // Update and draw sparks
+            sparks = sparks.filter(s => s.opacity > 0);
+            sparks.forEach(s => {
+                s.update();
+                s.draw();
+            });
+            
+            // Random new meteor
+            if (Math.random() < 0.002 && meteors.length < 4) {
+                meteors.push(new Meteor());
+            }
+            
+            requestAnimationFrame(animate);
+        }
+        
+        animate();
+        
+        // ============================================
+        // GRAFFITI TAGS
+        // ============================================
+        
+        const graffitiTags = ['ZYKOS', 'TOAST', '🍞', 'ZKS', 'HODL', '$$$', 'MOON', 'DEGEN'];
+        const graffitiColors = ['#ff6b35', '#00ff9d', '#ff3366', '#ffd93d', '#00ffff'];
+        const graffitiContainer = document.getElementById('graffitiContainer');
+        
+        function createGraffitiTag() {
+            const tag = document.createElement('div');
+            tag.className = 'graffiti-tag';
+            tag.textContent = graffitiTags[Math.floor(Math.random() * graffitiTags.length)];
+            tag.style.left = Math.random() * 80 + 10 + '%';
+            tag.style.top = Math.random() * 80 + 10 + '%';
+            tag.style.color = graffitiColors[Math.floor(Math.random() * graffitiColors.length)];
+            tag.style.setProperty('--rotation', (Math.random() - 0.5) * 30 + 'deg');
+            tag.style.animationDelay = Math.random() * 5 + 's';
+            
+            graffitiContainer.appendChild(tag);
+            
+            // Remove after animation
+            setTimeout(() => {
+                tag.remove();
+            }, 8000);
+        }
+        
+        // Create graffiti periodically
+        setInterval(createGraffitiTag, 3000);
+        createGraffitiTag(); // Initial one
+        
+        // ============================================
+        // CONTRACT INTERACTION
+        // ============================================
+        
+        const CONTRACT_ADDRESS = '0xB4D46f6C550AA855307085b8970D971Cdeafb030';
+        const USDC_ADDRESS = '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d';
+        const USDT_ADDRESS = '0x55d398326f99059fF775485246999027B3197955';
+        const BSC_CHAIN_ID = 56;
+
+        const TOKEN_ABI = [
+            "function currentPoolId() view returns (uint256)",
+            "function getTotalSold() view returns (uint256)",
+            "function getPool(uint256) view returns (uint256, uint256, uint8)",
+            "function buyWithUSDC(uint256 amount) external",
+            "function buyWithUSDT(uint256 amount) external",
+            "function calcPrice(uint256 amount) view returns (uint256)"
+        ];
+
+        const ERC20_ABI = [
+            "function approve(address spender, uint256 amount) returns (bool)",
+            "function allowance(address owner, address spender) view returns (uint256)",
+            "function balanceOf(address) view returns (uint256)"
+        ];
+
+        let provider, signer, contract, walletAddress;
+
+        // Copy Contract Address
+        function copyContract() {
+            navigator.clipboard.writeText(CONTRACT_ADDRESS);
+            document.getElementById('copyFeedback').classList.add('show');
+            setTimeout(() => {
+                document.getElementById('copyFeedback').classList.remove('show');
+            }, 2000);
+        }
+
+        // Connect Wallet
+        async function connectWallet() {
+            const btn = document.getElementById('connectWallet');
+            
+            if (typeof window.ethereum === 'undefined') {
+                alert('MetaMask no detectado. Instalá MetaMask para continuar.');
+                return;
+            }
+
+            try {
+                const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                walletAddress = accounts[0];
+
+                const chainId = await window.ethereum.request({ method: 'eth_chainId' });
+                if (parseInt(chainId, 16) !== BSC_CHAIN_ID) {
+                    try {
+                        await window.ethereum.request({
+                            method: 'wallet_switchEthereumChain',
+                            params: [{ chainId: '0x38' }]
+                        });
+                    } catch (switchError) {
+                        if (switchError.code === 4902) {
+                            await window.ethereum.request({
+                                method: 'wallet_addEthereumChain',
+                                params: [{
+                                    chainId: '0x38',
+                                    chainName: 'BNB Smart Chain',
+                                    nativeCurrency: { name: 'BNB', symbol: 'BNB', decimals: 18 },
+                                    rpcUrls: ['https://bsc-dataseed1.binance.org'],
+                                    blockExplorerUrls: ['https://bscscan.com']
+                                }]
+                            });
+                        }
+                    }
+                }
+
+                provider = new ethers.BrowserProvider(window.ethereum);
+                signer = await provider.getSigner();
+                contract = new ethers.Contract(CONTRACT_ADDRESS, TOKEN_ABI, signer);
+
+                const shortAddress = walletAddress.slice(0, 6) + '...' + walletAddress.slice(-4);
+                btn.textContent = shortAddress;
+                btn.classList.add('connected');
+
+                document.getElementById('buyBtn').disabled = false;
+                document.getElementById('buyBtn').textContent = 'COMPRAR ZKS';
+
+                loadContractData();
+
+            } catch (error) {
+                console.error('Connection error:', error);
+                alert('Error al conectar: ' + error.message);
+            }
+        }
+
+        // Load Contract Data
+        async function loadContractData() {
+            try {
+                const readProvider = new ethers.JsonRpcProvider('https://bsc-dataseed1.binance.org');
+                const readContract = new ethers.Contract(CONTRACT_ADDRESS, TOKEN_ABI, readProvider);
+
+                const [poolId, totalSold] = await Promise.all([
+                    readContract.currentPoolId(),
+                    readContract.getTotalSold()
+                ]);
+
+                const poolIdNum = Number(poolId);
+                const totalSoldNum = Number(totalSold) / 1e18;
+                const progress = (totalSoldNum / 100000000) * 100;
+
+                document.getElementById('currentPool').textContent = `POOL ${poolIdNum} ACTIVO`;
+                document.getElementById('totalSold').textContent = `${totalSoldNum.toLocaleString()} ZKS vendidos`;
+                document.getElementById('poolProgress').style.width = `${progress}%`;
+
+            } catch (error) {
+                console.error('Error loading data:', error);
+            }
+        }
+
+        // Calculate Price
+        function updateSummary() {
+            const amount = parseFloat(document.getElementById('buyAmount').value) || 0;
+            const price = 0.05;
+            const total = amount * price;
+
+            document.getElementById('summaryAmount').textContent = `${amount.toLocaleString()} ZKS`;
+            document.getElementById('summaryPrice').textContent = `$${price.toFixed(4)}`;
+            document.getElementById('summaryTotal').textContent = `$${total.toFixed(2)}`;
+        }
+
+        // Buy Tokens
+        async function buyTokens() {
+            if (!signer || !contract) {
+                alert('Conectá tu wallet primero');
+                return;
+            }
+
+            const amount = parseFloat(document.getElementById('buyAmount').value);
+            if (!amount || amount <= 0) {
+                alert('Ingresá una cantidad válida');
+                return;
+            }
+
+            const btn = document.getElementById('buyBtn');
+            const paymentToken = document.getElementById('paymentToken').value;
+            const tokenAddress = paymentToken === 'usdc' ? USDC_ADDRESS : USDT_ADDRESS;
+
+            try {
+                btn.disabled = true;
+                btn.textContent = 'APROBANDO...';
+
+                const tokenContract = new ethers.Contract(tokenAddress, ERC20_ABI, signer);
+                const amountWei = ethers.parseUnits(amount.toString(), 18);
+                const price = await contract.calcPrice(amountWei);
+                
+                const allowance = await tokenContract.allowance(walletAddress, CONTRACT_ADDRESS);
+                if (allowance < price) {
+                    const approveTx = await tokenContract.approve(CONTRACT_ADDRESS, price);
+                    btn.textContent = 'ESPERANDO APROBACIÓN...';
+                    await approveTx.wait();
+                }
+
+                btn.textContent = 'COMPRANDO...';
+                const buyTx = paymentToken === 'usdc' 
+                    ? await contract.buyWithUSDC(amountWei)
+                    : await contract.buyWithUSDT(amountWei);
+                
+                btn.textContent = 'CONFIRMANDO...';
+                await buyTx.wait();
+
+                alert('🍞 Compra exitosa! Tus ZKS están en tu wallet.');
+                btn.textContent = 'COMPRAR ZKS';
+                btn.disabled = false;
+
+                loadContractData();
+
+            } catch (error) {
+                console.error('Buy error:', error);
+                alert('Error: ' + (error.reason || error.message));
+                btn.textContent = 'COMPRAR ZKS';
+                btn.disabled = false;
+            }
+        }
+
+        // Event Listeners
+        document.getElementById('connectWallet').addEventListener('click', connectWallet);
+        document.getElementById('buyAmount').addEventListener('input', updateSummary);
+        document.getElementById('buyBtn').addEventListener('click', buyTokens);
+
+        if (window.ethereum) {
+            window.ethereum.on('accountsChanged', () => location.reload());
+            window.ethereum.on('chainChanged', () => location.reload());
+        }
+
+        loadContractData();
+
+        
+        // Konami code easter egg
+        let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        let konamiIndex = 0;
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    document.body.style.animation = 'glitch 0.5s infinite';
+                    setTimeout(() => {
+                        alert('🍞 THE TOASTER SEES ALL 🍞');
+                        document.body.style.animation = '';
+                    }, 2000);
+                    konamiIndex = 0;
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
+
+        console.log(`
+ ███████╗██╗   ██╗██╗  ██╗ ██████╗ ███████╗
+ ╚══███╔╝╚██╗ ██╔╝██║ ██╔╝██╔═══██╗██╔════╝
+   ███╔╝  ╚████╔╝ █████╔╝ ██║   ██║███████╗
+  ███╔╝    ╚██╔╝  ██╔═██╗ ██║   ██║╚════██║
+ ███████╗   ██║   ██║  ██╗╚██████╔╝███████║
+ ╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+
+ THE TOASTER TOKEN 🍞
+ Contract: 0xB4D46f6C550AA855307085b8970D971Cdeafb030
+        `);
+    </script>
 </body>
 </html>
